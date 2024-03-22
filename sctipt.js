@@ -1,43 +1,49 @@
 let rock = () => {
-    playRound("rock");
+    playersRound("rock");
 }
 
 let paper = () => {
-    playRound("paper");
+    playersRound("paper");
 }
 
 let scissors = () => {
-    playRound("scissors");
+    playersRound("scissors");
 }
 
-function computerPlay() {
+// let choices = [
+//     'rock',
+//     'paper',
+//     'scissors'
+// ]
+
+function computerplayers() {
     const choices = ["rock", "paper", "scissors"];
     const randomIndex = Math.floor(Math.random() * choices.length);
     return choices[randomIndex];
 }
 
-// function playerPlay() {
+// function playerserplayers() {
 
 // }
 
-function playRound(playerSelection) {
-    const computerSelection = computerPlay();
+function playersRound(playerserSelection) {
+    const computerSelection = computerplayers();
     let result;
-    if (playerSelection === computerSelection) {
+    if (playerserSelection === computerSelection) {
         result = "It's a tie!";
     } else if (
-        (playerSelection === "rock" && computerSelection === "scissors") ||
-        (playerSelection === "paper" && computerSelection === "rock") ||
-        (playerSelection === "scissors" && computerSelection === "paper")
+        (playerserSelection === "rock" && computerSelection === "scissors") ||
+        (playerserSelection === "paper" && computerSelection === "rock") ||
+        (playerserSelection === "scissors" && computerSelection === "paper")
     ) {
-        result = "You win! " + playerSelection + " beats " + computerSelection;
+        result = "You win! " + playerserSelection + " beats " + computerSelection;
     } else {
-        result = "You lose! " + computerSelection + " beats " + playerSelection;
+        result = "You lose! " + computerSelection + " beats " + playerserSelection;
     }
-    displayResult(result);
+    displayersResult(result);
 }
 
-function displayResult(result) {
+function displayersResult(result) {
     document.getElementById("showResults").textContent = result;
 }
 
